@@ -4,7 +4,7 @@ import pandas as pd
 
 df = pd.read_csv("StudentsPerformance.csv")
 math_list =  df["math score"].to_list()
-elar_list =  df["reading score"].to_list()
+elar_list =  df["writing score"].to_list()
 
 #Mean for height and weight
 math_mean = statistics.mean(math_list)
@@ -30,6 +30,10 @@ elar_first_std_deviation_start, elar_first_std_deviation_end = elar_mean-height_
 #Percentage of data within 1, 2 and 3 Standard Deviations for Height
 math_list_of_data_within_1_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
 elar_list_of_data_within_1_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
+math_list_of_data_within_2_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
+elar_list_of_data_within_2_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
+math_list_of_data_within_3_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
+elar_list_of_data_within_3_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
 
 #Printing data for height and weight (Standard Deviation)
 print("{}% of data for math lies within 1 standard deviation".format(len(math_list_of_data_within_1_std_deviation)*100.0/len(math_list)))
