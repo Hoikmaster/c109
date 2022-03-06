@@ -25,24 +25,24 @@ weight_std_deviation = statistics.stdev(elar_list)
 #1, 2 and 3 Standard Deviations for height
 math_first_std_deviation_start, math_first_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
 elar_first_std_deviation_start, elar_first_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
-math_first_std_deviation_start, math_second_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
-elar_first_std_deviation_start, elar_second_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
-math_first_std_deviation_start, math_third_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
-elar_first_std_deviation_start, elar_third_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
+math_second_std_deviation_start, math_second_std_deviation_end = math_mean-(2*height_std_deviation), math_mean+(2*height_std_deviation)
+elar_second_std_deviation_start, elar_second_std_deviation_end = elar_mean-(2*height_std_deviation), elar_mean+(2*height_std_deviation)
+math_third_std_deviation_start, math_third_std_deviation_end = math_mean-(3*height_std_deviation), math_mean+(3*height_std_deviation)
+elar_third_std_deviation_start, elar_third_std_deviation_end = elar_mean-(3*height_std_deviation), elar_mean+(3*height_std_deviation)
 
 
 #Percentage of data within 1, 2 and 3 Standard Deviations for Height
 math_list_of_data_within_1_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
 elar_list_of_data_within_1_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
-math_list_of_data_within_2_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
-elar_list_of_data_within_2_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
-math_list_of_data_within_3_std_deviation = [result for result in math_list if result > math_first_std_deviation_start and result < math_first_std_deviation_end]
-elar_list_of_data_within_3_std_deviation = [result for result in elar_list if result > elar_first_std_deviation_start and result < elar_first_std_deviation_end]
+math_list_of_data_within_2_std_deviation = [result for result in math_list if result > math_second_std_deviation_start and result < math_second_std_deviation_end]
+elar_list_of_data_within_2_std_deviation = [result for result in elar_list if result > elar_second_std_deviation_start and result < elar_second_std_deviation_end]
+math_list_of_data_within_3_std_deviation = [result for result in math_list if result > math_third_std_deviation_start and result < math_third_std_deviation_end]
+elar_list_of_data_within_3_std_deviation = [result for result in elar_list if result > elar_third_std_deviation_start and result < elar_third_std_deviation_end]
 
 #Printing data for height and weight (Standard Deviation)
 print("{}% of data for math lies within 1 standard deviation".format(len(math_list_of_data_within_1_std_deviation)*100.0/len(math_list)))
 print("{}% of data for elar lies within 1 standard deviation".format(len(elar_list_of_data_within_1_std_deviation)*100.0/len(elar_list)))
-print("{}% of data for math lies within 2 standard deviation".format(len(math_list_of_data_within_1_std_deviation)*100.0/len(math_list)))
-print("{}% of data for elar lies within 2 standard deviation".format(len(elar_list_of_data_within_1_std_deviation)*100.0/len(elar_list)))
-print("{}% of data for math lies within 3 standard deviation".format(len(math_list_of_data_within_1_std_deviation)*100.0/len(math_list)))
-print("{}% of data for elar lies within 3 standard deviation".format(len(elar_list_of_data_within_1_std_deviation)*100.0/len(elar_list)))
+print("{}% of data for math lies within 2 standard deviation".format(len(math_list_of_data_within_2_std_deviation)*100.0/len(math_list)))
+print("{}% of data for elar lies within 2 standard deviation".format(len(elar_list_of_data_within_2_std_deviation)*100.0/len(elar_list)))
+print("{}% of data for math lies within 3 standard deviation".format(len(math_list_of_data_within_3_std_deviation)*100.0/len(math_list)))
+print("{}% of data for elar lies within 3 standard deviation".format(len(elar_list_of_data_within_3_std_deviation)*100.0/len(elar_list)))
