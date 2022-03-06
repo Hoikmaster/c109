@@ -25,6 +25,10 @@ weight_std_deviation = statistics.stdev(elar_list)
 #1, 2 and 3 Standard Deviations for height
 math_first_std_deviation_start, math_first_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
 elar_first_std_deviation_start, elar_first_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
+math_first_std_deviation_start, math_second_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
+elar_first_std_deviation_start, elar_second_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
+math_first_std_deviation_start, math_third_std_deviation_end = math_mean-height_std_deviation, math_mean+height_std_deviation
+elar_first_std_deviation_start, elar_third_std_deviation_end = elar_mean-height_std_deviation, elar_mean+height_std_deviation
 
 
 #Percentage of data within 1, 2 and 3 Standard Deviations for Height
